@@ -48,6 +48,7 @@ export default {
   methods:{
     redirect(item){
       if(item.text === 'logout'){
+        localStorage.removeItem('jwtToken')
          axios
           .get(`http://localhost:4000/api/auth/logout/`).then(response=>{
             console.log(response.data)
